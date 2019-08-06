@@ -22,13 +22,15 @@ variables:
   # Agent VM image name
   vmImageName: 'ubuntu-latest'
 stages:
-- stage: Build_App
-  displayName: Build the .net Core App
-  jobs:
-  - job: Build_App
-    displayName: 'dotnet build $(buildConfiguration)'
-    steps:
-      - script: dotnet build --configuration $(buildConfiguration)
+
+# Build in Docker file
+#- stage: Build_App
+#  displayName: Build the .net Core App
+#  jobs:
+#  - job: Build_App
+#    displayName: 'dotnet build $(buildConfiguration)'
+#    steps:
+#      - script: dotnet build --configuration $(buildConfiguration)
     
 - stage: Build
   displayName: Build and push stage
